@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body style="background-color:#132639;">
+    <div class="container stats-horizontal mb-4">
+        <h1 style="color:white; text-align:center; font-family:Alkatra; font-size:350%;">TO DO LIST</h1>
+        <div class="stats" style="text-align:center; margin-top:20px; font-size: 120%;">
+            <div id="total" style="display: inline-block; color:white; font-family:Alkatra; font-size:120%; margin-right: 10px;">Total: 0</div>
+            <div id="completed" style="display: inline-block; color:white; font-family:Alkatra; font-size:120%; margin-right: 10px">Completed: 0</div>
+            <div id="pending" style="display: inline-block; color:white; font-family:Alkatra; font-size:120%; margin-right: 10px">Pending: 0</div> 
+            <div id="completion" style="display: inline-block; color:white; font-family:Alkatra; font-size:120%; margin-right: 10px">Completion: 0%</div>
+        </div>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Add a new task..." required>
+            <button type="submit">Add</button>
+        </form>
+        <ul id="todo-list"></ul>
+</body>
+</html>
