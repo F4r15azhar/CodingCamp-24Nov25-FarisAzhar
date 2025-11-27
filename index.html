@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body style="background-color:#132639;">
@@ -18,80 +19,24 @@
         </div>
 
        <form id="todoForm" style="margin-top: 20px; text-align: center;">
-    <input type="text" id="namaKegiatan" placeholder="Nama Kegiatan" required>
-    <input type="date" id="tanggal" required>
-    <button type="submit">Submit</button>
+    <input type="text" id="namaKegiatan" placeholder="Nama Kegiatan" style="height: 20px; width:30%" required>
+    <input type="date" id="tanggal" style="height: 22px;" required>
+    <button type="submit" style="height: 25px;">Submit</button>
 </form>
 
-<div style="background-color: #8080ff; align-self: center; height: auto; min-height: 200px; border-radius: 10px; margin-top: 25px; margin-left: 30px; margin-right: 30px; padding-top: 1px;">
-<ul id="todoList" style="list-style: none; font-size: 20px; margin: auto; margin-right: 20px; "></ul>
-</div>
+<table border="1" width="100%" style="margin-top:20px; color:white; text-align:center;">
+    <thead style="background-color:#2c3e50;">
+        <tr>
+            <th>No</th>
+            <th>Nama Kegiatan</th>
+            <th>Tanggal</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody id="todoList"></tbody>
+</table>
 
-<script>
-    const form = document.getElementById("todoForm");
-    const namaInput = document.getElementById("namaKegiatan");
-    const tanggalInput = document.getElementById("tanggal");
-    const list = document.getElementById("todoList");
-
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const nama = namaInput.value;
-        const tanggal = tanggalInput.value;
-
-        const li = document.createElement("li");
-
-        const info = document.createElement("span");
-        info.textContent = nama + " | " + tanggal;
-
-        const btnSelesai = document.createElement("button");
-        btnSelesai.textContent = "Selesai";
-
-        const btnHapus = document.createElement("button");
-        btnHapus.textContent = "Hapus";
-
-        // Fungsi selesai
-        btnSelesai.onclick = function() {
-            li.classList.toggle("selesai");
-            updateStats();   // UPDATE STATISTIK SAAT STATUS BERUBAH
-        };
-
-        // Fungsi hapus
-        btnHapus.onclick = function() {
-            li.remove();
-            updateStats();   // UPDATE STATISTIK SAAT DATA DIHAPUS
-        };
-
-        li.appendChild(info);
-        li.appendChild(btnSelesai);
-        li.appendChild(btnHapus);
-        list.appendChild(li);
-        updateStats();
-
-        // Reset input
-        namaInput.value = "";
-        tanggalInput.value = "";
-    });
-</script>
-<script>
-    const totalEl = document.getElementById("total");
-    const completedEl = document.getElementById("completed");
-    const pendingEl = document.getElementById("pending");
-    const completionEl = document.getElementById("completion");
-
-    function updateStats() {
-        const total = list.children.length;
-        const completed = document.querySelectorAll("li.selesai").length;
-        const pending = total - completed;
-
-        let percent = total === 0 ? 0 : Math.round((completed / total) * 100);
-
-        totalEl.textContent = "Total: " + total;
-        completedEl.textContent = "Completed: " + completed;
-        pendingEl.textContent = "Pending: " + pending;
-        completionEl.innerHTML = "<b>Completion: " + percent + "%</b>";
-    }
-</script>
-
+<script src="/JS/script.js"></script>
 </body>
 </html>

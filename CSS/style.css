@@ -3,13 +3,6 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.selesai {
-    text-decoration: line-through;
-    color: #d18585;          /* HIJAU TERANG (bisa diganti) */
-    font-style: italic;
-    background-color: rgba(0, 255, 156, 0.1);
-    text-align: left;
-}
 todolist {
     border: 10px solid #121d7e;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -22,25 +15,32 @@ span{
     color: #000000;
 }
 
-button{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #121d7e;
-    color: white;
+tr.selesai {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    text-decoration: line-through;
+}
+
+td button {
     border: none;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
+    padding: 8px 12px;
+    margin: 3px;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
-selesai button{
-    background-color: #d18585;
+td button:first-child {
+    background-color: #27ae60;   /* hijau untuk selesai */
+    color: white;
 }
 
-hapus button{
-    background-color: #d18585;
+td button:last-child {
+    background-color: #e74c3c;   /* merah untuk hapus */
+    color: white;
+}
+
+td button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
 }
