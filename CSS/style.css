@@ -10,9 +10,37 @@
     background-color: rgba(0, 255, 156, 0.1);
     text-align: left;
 }
-.todolist {
+todolist {
     border: 10px solid #121d7e;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #000000;
     text-align: left;
+}
+
+span{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000000;
+}
+
+button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #121d7e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+selesai button{
+    background-color: #d18585;
+}
+
+hapus button{
+    background-color: #d18585;
 }
