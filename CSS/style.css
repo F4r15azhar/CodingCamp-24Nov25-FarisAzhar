@@ -1,0 +1,19 @@
+.stats{
+    border: 3px solid #121d7e;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.selesai {
+    text-decoration: line-through;
+    color: #00ff9c;          /* HIJAU TERANG (bisa diganti) */
+    font-style: italic;
+    background-color: rgba(0, 255, 156, 0.1);
+}
+.todolist {
+    border: 2px solid #121d7e;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f0f8ff;
+}
