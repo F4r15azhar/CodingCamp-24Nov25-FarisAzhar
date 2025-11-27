@@ -57,10 +57,6 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
-    // ==============================
-    // LANJUT BUAT ROW TABEL (SAMA SEPERTI SEBELUMNYA)
-    // ==============================
-
     const tr = document.createElement("tr");
 
     const tdNo = document.createElement("td");
