@@ -32,8 +32,34 @@ function updateNumbering() {
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const nama = namaInput.value;
+    const nama = namaInput.value.trim();
     const tanggal = tanggalInput.value;
+
+    // ✅ VALIDASI 1: Nama tidak boleh kosong / spasi saja
+    if (nama === "") {
+        alert("Nama kegiatan wajib diisi!");
+        return;
+    }
+
+    // ✅ VALIDASI 2: Tanggal wajib diisi
+    if (tanggal === "") {
+        alert("Tanggal kegiatan wajib diisi!");
+        return;
+    }
+
+    // ✅ VALIDASI 3: Tanggal tidak boleh kurang dari hari ini
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const selectedDate = new Date(tanggal);
+
+    if (selectedDate < today) {
+        alert("Tanggal tidak boleh kurang dari hari ini!");
+        return;
+    }
+
+    // ==============================
+    // LANJUT BUAT ROW TABEL (SAMA SEPERTI SEBELUMNYA)
+    // ==============================
 
     const tr = document.createElement("tr");
 
@@ -52,10 +78,13 @@ form.addEventListener("submit", function (e) {
     const tdAksi = document.createElement("td");
 
     const btnSelesai = document.createElement("button");
-    btnSelesai.innerHTML = '<i class="fa-solid fa-check"></i>';
+        btnSelesai.type = "button";
+        btnSelesai.innerHTML = '<i class="fa-solid fa-check"></i>';
 
     const btnHapus = document.createElement("button");
-    btnHapus.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        btnHapus.type = "button";
+        btnHapus.innerHTML = '<i class="fa-solid fa-trash"></i>';
+
 
     btnSelesai.onclick = function () {
         tr.classList.toggle("selesai");
@@ -95,3 +124,21 @@ form.addEventListener("submit", function (e) {
     namaInput.value = "";
     tanggalInput.value = "";
 });
+
+
+function filterData(status) {
+    const rows = list.querySelectorAll("tr");
+
+    rows.forEach(row => {
+        if (status === "all") {
+            row.style.display = "";
+        } 
+        else if (status === "completed") {
+            row.style.display = row.classList.contains("selesai") ? "" : "none";
+        } 
+        else if (status === "pending") {
+            row.style.display = !row.classList.contains("selesai") ? "" : "none";
+        }
+    });
+}
+
