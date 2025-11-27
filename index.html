@@ -9,10 +9,10 @@
 <body style="background-color:#132639;">
     <div class="container stats-horizontal mb-4">
         <h1 style="color:white; text-align:center; font-size:350%;">TO DO LIST</h1>
-        <div class="stats" style="background-color: rgb(53, 37, 145); text-align:center; margin:20px 40px 0px; font-size: 120%;">
-            <div id="total" style="display: inline-block; color:white; font-size:120%; margin-right: 10px">Total: 0</div>
-            <div id="completed" style="display: inline-block; color:white; font-size:120%; margin-right: 10px">Completed: 0</div>
-            <div id="pending" style="display: inline-block; color:white; font-size:120%; margin-right: 10px">Pending: 0</div> 
+        <div class="stats" style="alignment-baseline: center; background-color: rgb(53, 37, 145); text-align:center; margin:20px 40px; font-size: 120%; padding: 10px; border-radius: 10px;">
+            <div id="total" style="display: inline-block; color:white; font-size:120%; margin-right: 30px">Total: 0</div>
+            <div id="completed" style="display: inline-block; color:white; font-size:120%; margin-right: 30px">Completed: 0</div>
+            <div id="pending" style="display: inline-block; color:white; font-size:120%; margin-right: 30px">Pending: 0</div> 
             </br>
             <div id="completion" style="display: inline-block; color:white; font-size:150%; margin-right: 10px; margin-top: 20px;"><b>Completion: 0%</b></div>
         </div>
@@ -23,7 +23,9 @@
     <button type="submit">Submit</button>
 </form>
 
-<ul id="todoList"></ul>
+<div style="background-color: #8080ff; align-self: center; height: auto; min-height: 200px; border-radius: 10px; margin-top: 25px; margin-left: 30px; margin-right: 30px; padding-top: 1px;">
+<ul id="todoList" style="list-style: none; font-size: 20px; margin: auto; margin-right: 20px; "></ul>
+</div>
 
 <script>
     const form = document.getElementById("todoForm");
